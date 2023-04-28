@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "./NavBar";
 import MoviesPage from "./MoviesPage";
 
@@ -13,6 +13,7 @@ function App() {
   return (
     <div>
       <NavBar />
+      <Router>
       <Switch>
         <Route path="/movies">
           <MoviesPage movies={movies} />
@@ -21,6 +22,7 @@ function App() {
           <div>Home</div>
         </Route>
       </Switch>
+      </Router>
     </div>
   );
 }
